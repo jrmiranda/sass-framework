@@ -1,0 +1,108 @@
+html, body {
+  font-family: $base-font-family;
+  font-size: $base-fontsize;
+  line-height: $base-lineheight;
+  color: $base-fontcolor;
+
+  @if ($use-responsive-typo) {
+    @include responsive-font-size($base-map);
+  }
+}
+
+p {
+  font-size: $p-fontsize;
+  line-height: $base-lineheight;
+  margin: $p-margin;
+
+  @if ($use-responsive-typo) {
+    @include responsive-font-size($p-map);
+  }
+}
+
+small { font-size: $small-fontsize; }
+strong { font-size: $strong-fontsize;}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-fontfamily;
+  color: $headings-color;
+  line-height: $headings-lineheight;
+  font-weight: $headings-fontweight;
+  margin: $headings-margin;
+  padding: 0
+}
+
+@each $h, $size in $headings {
+  #{$h}, .#{$h} {
+    font-size: $size;
+
+    small {
+      font-size: $headings-small-fontsize;
+      color: $headings-small-color;
+      font-weight: normal;
+    }
+
+    @if ($use-responsive-typo) {
+      @include responsive-font-size(map-get($headings-map, $h));
+    }
+  }
+}
+
+ul, ol {
+  @include box-sizing(border-box);
+  @include clearfix;
+  margin: 0 0 $list-margin-y $list-margin-x;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    line-height: $list-lineheight;
+    text-align: left;
+  }
+
+  &.inline {
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin-right: $list-margin-x;
+      display: inline-block;
+    }
+  }
+
+  &.unstyled { list-style-type: none; }
+  &.circle { list-style-type: circle; }
+  &.disc { list-style-type: disc; }
+}
+
+a, .link {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-color_visited;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $link-color_hover;
+    text-decoration: $link-decoration_hover;
+  }
+
+  &:active {
+    color: $link-color_active;
+    text-decoration: $link-decoration_active;
+  }
+
+  &.disabled {
+    color: rgba($link-color, $link-color-alpha_disabled);
+    text-decoration: none;
+    cursor: not-allowed;
+  }
+}
+
+hr, .separator {
+    margin: $hr-margin;
+    border:0;
+    border-bottom: $hr-border;
+}

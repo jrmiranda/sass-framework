@@ -1,0 +1,81 @@
+@mixin inputs {
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=search],
+  input[type=number],
+  input[type=date],
+  input[type=datetime],
+  input[type=month],
+  input[type=week],
+  input[type=time],
+  input[type=tel],
+  input[type=url],
+  textarea,
+  select {
+    @content;
+  }
+}
+
+@mixin input-sizes {
+  @each $variant, $size-map in $input-sizes {
+    &.#{$variant} {
+      @include make-size($size-map);
+    }
+  }
+}
+
+@mixin input-group-sizes {
+  @each $variant, $size-map in $input-sizes {
+    &.#{$variant} {
+      @include inputs {
+        @include make-size($size-map);
+      }
+
+      label,
+      &.inline .check-group label,
+      &.inline .radio-group label
+      {
+        @include make-size($size-map);
+      }
+    }
+  }
+}
+
+@mixin make-input-color($color) {
+  border: $input-border-size solid lighten($color, $input-border-lighten);
+
+  &:focus {
+    border: $input-border-size solid $color;
+  }
+}
+
+@mixin input-colors {
+  @each $variant, $bgcolor in $input-colors {
+    @if ($variant == null) {
+      @include make-input-color($bgcolor)
+    }
+    @else {
+      &.#{$variant} {
+        @include make-input-color($bgcolor);
+      }
+    }
+  }
+}
+
+@mixin input-group-colors {
+  @each $variant, $bgcolor in $input-colors {
+    @if ($variant == null) {
+      @include inputs {
+        @include make-input-color($bgcolor);
+      }
+    }
+    @else {
+      &.#{$variant} {
+        @include inputs {
+          @include make-input-color($bgcolor);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin box-sizing($box) {
+  -moz-box-sizing: $box;
+  -webkit-box-sizing: $box;
+  box-sizing: $box;
+}
+
+@mixin breakpoint($size) {
+  @if $size == xs {
+    @media only screen and (max-width: $screen-sm - 1) {
+      @content;
+    }
+  }
+  @else if $size == sm {
+    @media only screen and (min-width: $screen-sm) and (max-width: $screen-md - 1) {
+      @content;
+    }
+  }
+  @else if $size == md {
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg - 1) {
+      @content;
+    }
+  }
+  @else if $size == lg {
+    @media only screen and (min-width: $screen-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin collapse($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin make-size($font-map) {
+  @if type-of($font-map) == 'list' {
+    font-size: nth($font-map, 1);
+
+    @if(length($font-map) > 1) {
+      line-height: nth($font-map, 2);
+    }
+
+    @if(length($font-map) > 2) {
+      padding: nth($font-map, 3);
+    }
+  }
+  @else {
+    font-size: $font-map;
+  }
+}
+
+@mixin sizes($sizes-map, $prefix:'') {
+  @each $size, $map in $sizes-map {
+    @if ($size == null) {
+      @include make-size($map);
+    }
+    @else {
+      &.#{$prefix}#{$size} {
+        @include make-size($map);
+      }
+    }
+  }
+}
+
+@mixin responsive-font-size($font-map) {
+  @each $bp, $size in $font-map {
+    @if ($bp == null) {
+      @include make-size($size);
+    }
+    @else {
+      @media #{map-get($typo-breakpoints, $bp)} {
+        @include make-size($size);
+      }
+    }
+  }
+}
+
+@mixin make-color($color-map) {
+  @if type-of($color-map) == 'list' {
+    background-color: nth($color-map, 1);
+
+    @if(length($color-map) > 1) {
+      color: nth($color-map, 2);
+    }
+
+    @if(length($color-map) > 2) {
+      border: 1px solid nth($color-map, 3);
+    }
+  }
+  @else {
+    background-color: $color-map;
+  }
+}
+
+@mixin colors($colors-map, $prefix:'') {
+  @each $color, $map in $colors-map {
+    @if ($color == null) {
+      @include make-color($map);
+    }
+    @else {
+      &.#{$prefix}#{$color} {
+        @include make-color($map);
+      }
+    }
+  }
+}
+
+@mixin radius($radius) {
+  @if ($enable-round) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+  }
+}
+
+@mixin radius-top($radius) {
+  @if ($enable-round) {
+    -moz-border-top-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    -moz-border-top-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+  }
+}
+
+@mixin radius-right($radius) {
+  @if ($enable-round) {
+    -moz-border-top-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    background-clip: padding-box;
+  }
+}
+
+@mixin radius-bottom($radius) {
+  @if ($enable-round) {
+    -moz-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    background-clip: padding-box;
+  }
+}
+
+@mixin radius-left($radius) {
+  @if ($enable-round) {
+    -moz-border-top-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    -moz-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+  }
+}
+
+@mixin shadow($shadow) {
+  @if ($enable-shadows) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+}
+
+@mixin antialiasing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}

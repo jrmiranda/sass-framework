@@ -1,0 +1,415 @@
+/*
+Colors
+*/
+$black: #000000;
+$white: #ffffff;
+
+$gray-lightest: #fbfbfb;
+$gray-lighter:  #f0f0f0;
+$gray-light:    #e0e0e0;
+$gray:          #aaaaaa;
+$gray-dark:     #777777;
+$gray-darker:   #555555;
+$gray-darkest:  #333333;
+
+$red:       #CB5040;
+$yellow:    #EBA226;
+$green:     #78AF44;
+$blue:      #3090D0;
+
+$colors: (
+  'red':    $red,
+  'yellow': $yellow,
+  'green':  $green,
+  'blue':   $blue
+);
+
+/*
+Basics
+*/
+$enable-round:          true;
+$enable-shadows:        true;
+$enable-gradients:      true;
+$enable-transitions:    true;
+
+$grid-automatic-gutters:  true;
+$use-responsive-typo:     false;
+
+
+/*
+Defaults
+*/
+$default-spacing: 10px;
+$default-bgcolor: #fff;
+$default-color: #222222;
+$default-border: 1px solid #ddd;
+$default-radius: 0.2em;
+
+$bg-color: #efefef;
+$bg-lighten: 40%;
+
+
+/*
+Screen Sizes & Grid
+*/
+$grid-rows: 14;
+$grid-spacing-x: $default-spacing;
+$grid-spacing-y: $default-spacing;
+
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+$breakpoints: (
+  xs: "(max-width: #{$screen-sm - 1})",
+  sm: "(min-width: #{$screen-sm}) and (max-width: #{$screen-md - 1})",
+  md: "(min-width: #{$screen-md}) and (max-width: #{$screen-lg - 1})",
+  lg: "(min-width: #{$screen-lg})"
+);
+
+$typo-breakpoints: (
+  small: "(max-width: 600px)",
+  large: "(min-width: 1200px)"
+);
+
+
+/*
+Typography
+*/
+$font-sans-serif: 'helvetica', 'arial', sans-serif;
+$font-serif: 'Noto Serif', serif;
+
+//Base
+$base-font-family: $font-sans-serif;
+$base-fontsize: 16px;
+$base-lineheight: 1.5;
+$base-fontcolor: $default-color;
+
+$base-map: (
+  small: 16px,
+  large: 16px
+);
+
+//Paragraphs and Basic Text
+$p-fontsize: 90%;
+$p-margin: 0 0 10px 0;
+
+$p-map: (
+  small: 90%,
+  large: 100%
+);
+
+$link-color: #008bff;
+$link-color_hover: $link-color;
+$link-decoration_hover: underline;
+$link-color_active: $link-color;
+$link-decoration_active: none;
+$link-color_visited: $link-color;
+$link-color-alpha_disabled: 0.6;
+
+$small-fontsize: 80%;
+$strong-fontsize: 110%;
+
+$hr-border: $default-border;
+$hr-margin: 10px 0;
+
+//Headings
+$headings-color: $default-color;
+$headings-lineheight: 1.3;
+$headings-fontfamily: inherit;
+$headings-fontweight: 400;
+$headings-margin:  0 0 0.8rem 0;
+
+$headings-small-fontsize: 70%;
+$headings-small-color: #888;
+
+$headings: (
+  h1: 2.40rem,
+  h2: 2.00rem,
+  h3: 1.75rem,
+  h4: 1.50rem,
+  h5: 1.25rem,
+  h6: 1.00rem,
+);
+
+$headings-map: (
+  h1: (
+    small: (2.30rem, 1.3),
+    large: (2.50rem, 1.3)
+  ),
+  h2: (
+    small: (1.90rem, 1.3),
+    large: (2.15rem, 1.3)
+  ),
+  h3: (
+    small: (1.65rem, 1.3),
+    large: (1.85rem, 1.3)
+  ),
+  h4: (
+    small: (1.40rem, 1.3),
+    large: (1.60rem, 1.3)
+  ),
+  h5: (
+    small: (1.15rem, 1.3),
+    large: (1.35rem, 1.3)
+  ),
+  h6: (
+    small: (1.00rem, 1.3),
+    large: (1.00rem, 1.3)
+  ),
+);
+
+//Font Styles
+$font-sizes: (
+  tiny:   0.750rem,
+  small:  0.875rem,
+  base:   1.000rem,
+  large:  1.250rem,
+  huge:   1.750rem
+);
+
+$font-colors: (
+  'red': $red,
+  'yellow': $yellow,
+  'green': $green,
+  'blue': $blue,
+  'black': $black,
+  'white': $white,
+  'light': $gray-dark,
+  'lighter': $gray,
+  'dark': $gray-darkest
+);
+
+//Lists
+$list-margin-x: 1.1em;
+$list-margin-y: 1em;
+$list-lineheight: 1.6;
+
+
+/*
+Tables
+*/
+$table-fontsize: 1rem;
+$table-bgcolor: $default-bgcolor;
+$table-padding: 0.6rem;
+$table-border: 1px solid #ececec;
+
+$table-header-border: 2px solid #ececec;
+
+$table-compact-padding: 0.3rem 0.4rem;
+$table-striped-bgcolor: #fafafa;
+$table-hover-bgcolor: #f5f5f5;
+
+
+/*
+Containers
+*/
+$container-default-width: 900px;
+$container-spaced-margin: $default-spacing;
+
+$container-sizes: (
+    tiny: 500px,
+    small: 700px,
+    large: 1000px,
+    huge: 1200px
+);
+
+
+/*
+Boxes
+*/
+$box-bgcolor: $default-bgcolor;
+$box-border: 1px solid #eaeaea;
+$box-radius: $default-radius;
+$box-padding: 0.5em 0.6em;
+$box-shadow: 1px 1px 1px 0px rgba(100,100,100,0.07);
+
+$box-header-bgcolor: #fbfbfb;
+$box-footer-bgcolor: $box-header-bgcolor;
+$box-header-border: 1px solid #eee;
+$box-footer-border: $box-header-border;
+$box-header-padding: 0.2em 0.5em;
+$box-footer-padding: $box-header-padding;
+
+$box-title-fontsize: 0.8em;
+$box-title-color: #777;
+
+
+/*
+    Alerts
+*/
+$alert-padding: 0.8em;
+$alert-margin: 0;
+$alert-radius: 5px;
+$alert-border-size: 1px;
+$alert-fontfamily: inherit;
+$alert-fontsize: 1em;
+$alert-lineheight: 2em;
+
+$icon-margin: 10px;
+$icon-fontsize: 2em;
+$icon-lineheight: 1em;
+$icon-width: 1em;
+
+$alert-colors: (
+  'red': (
+    lighten($red, 44%),
+    darken($red, 1%),
+    lighten($red, 42%)
+  ),
+  'yellow': (
+    lighten($yellow, 40%),
+    darken($yellow, 8%),
+    lighten($yellow, 36%)
+  ),
+  'green': (
+    lighten($green, 45%),
+    darken($green, 5%),
+    lighten($green, 40%)
+  ),
+  'blue': (
+    lighten($blue, 45%),
+    darken($blue, 20%),
+    lighten($blue, 40%)
+  )
+);
+
+
+/*
+Buttons
+*/
+$button-fontfamily: 'Roboto', sans-serif;
+$button-padding: 0.3em 0.6em;
+$button-compact-padding: 0.1em 0.6em;
+$button-margin: 0;
+$button-radius: 0.15em;
+$button-shadow: 0 1px 1px -1px rgba(255,255,255,1) inset;
+
+$button-border-size: 1px;
+$button-border-darken: 6%;
+$button-bgcolor-lighten_hover: 8%;
+$button-bgcolor-darken_active: 5%;
+$button-bgcolor-lighten_disabled: 12%;
+$button-color-opacity_disabled: 0.8%;
+
+$button-sizes: (
+  null:   (1.000em, 1.3),
+  tiny:   (0.813em, 1.3),
+  small:  (0.875em, 1.3),
+  large:  (1.375em, 1.3),
+  huge:   (2.000em, 1.3)
+);
+
+$button-colors: (
+  null: (#f8f8f8, #333, #eee),
+  'red': ($red, #fff, $red),
+  'yellow': ($yellow, #fff, $yellow),
+  'green': ($green, #fff, $green),
+  'blue': ($blue, #fff, $blue),
+  'light': ($gray-dark, #fff, #888),
+  'dark': ($gray-darker, #fff, #888),
+  'black': ($black, #fff, $black)
+);
+
+
+/*
+Forms
+*/
+$input-bgcolor: $default-bgcolor;
+$input-margin: 0.2em 0;
+$input-padding: 0.5em 0.6em;
+$input-padding-compact: 0.2em;
+$input-spacing: 0.3em;
+$input-radius: $default-radius;
+$input-border-size: 1px;
+$input-border-lighten: 19%;
+
+$form-check-color: #555;
+$form-check-margin: 0.2em 0;
+$form-check-lineheight: 1.4;
+$form-check-spacing: 0.3em;
+
+$form-label-fontsize: 0.9em;
+$form-label-color: inherit;
+
+$input-group-margin: 1em;
+
+$form-help-color: #777;
+$form-help-fontsize: 0.9em;
+
+$input-sizes: (
+  null:   (0.90em, 1.3),
+  tiny:   (0.75em, 1.3),
+  small:  (0.81em, 1.3),
+  large:  (1.37em, 1.3),
+  huge:   (2.00em, 1.3)
+);
+
+$input-colors: (
+  null: #999,
+  'red': $red,
+  'yellow': $yellow,
+  'green': $green,
+  'blue': $blue
+);
+
+
+/*
+Menus
+*/
+$menu-padding: 0.3em 0.7em;
+$menu-lineheight: 1.5;
+$menu-color: #777;
+$menu-color_hover: $default-color;
+$menu-bgcolor_hover: rgba(0, 0, 0, 0.03);
+$menu-light-bgcolor_hover: rgba(255, 255, 255, 0.8);
+$menu-border: 1px solid rgba(0, 0, 0, 0.1);
+$menu-radius: $default-radius;
+
+$menu-sizes: (
+  null:   0.9em,
+  tiny:   0.750em,
+  small:  0.800em,
+  large:  1.250em,
+  huge:   1.750em
+);
+
+
+/*
+Navbars
+*/
+$nav-lineheight: 1.5;
+$nav-padding: 0.8em;
+$nav-border: $default-border;
+$nav-bgcolor: $default-bgcolor;
+
+$nav-menu-color: #888;
+$nav-menu-color_hover: #333;
+$nav-menu-bgcolor_hover: #fafafa;
+$nav-menu-border: 1px solid #eee;
+
+$nav-collapse-breakpoint: 680px;
+
+$nav-sizes: (
+  null:   0.900em,
+  tiny:   0.750em,
+  small:  0.875em,
+  large:  1.100em,
+  huge:   1.250em
+);
+
+
+/*
+Cards
+*/
+$card-bgcolor: $default-bgcolor;
+$card-border: $default-border;
+$card-radius: $default-radius;
+$card-fontfamily: sans-serif;
+$card-padding: 15px;
+
+$card-title-margin: 0.4em;
+$card-title-fontsize: 1.1em;
+
+$card-text-size: 0.9em;

@@ -1,0 +1,32 @@
+@mixin make-button-color($bgcolor, $color, $border) {
+  background-color: $bgcolor;
+  color: $color;
+  border: $button-border-size solid darken($border, $button-border-darken);
+
+  &:hover {
+    background-color: lighten($bgcolor, $button-bgcolor-lighten_hover);
+  }
+
+  &:active,
+  &.active {
+    background-color: darken($bgcolor, $button-bgcolor-darken_active);
+  }
+
+  &.disabled {
+    background-color: lighten($bgcolor, $button-bgcolor-lighten_disabled);
+    color: rgba($color, $button-color-opacity_disabled);
+  }
+}
+
+@mixin button-colors($colors-map) {
+  @each $color, $map in $colors-map {
+    @if ($color == null) {
+      @include make-button-color(nth($map, 1), nth($map, 2), nth($map, 3));
+    }
+    @else {
+      &.#{$color} {
+        @include make-button-color(nth($map, 1), nth($map, 2), nth($map, 3));
+      }
+    }
+  }
+}

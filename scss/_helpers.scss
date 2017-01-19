@@ -1,0 +1,34 @@
+@import 'mixins/helpers';
+
+.left { float: left; }
+.right { float: right; }
+.center { margin: 0 auto; }
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+
+.clearfix { @include clearfix(); }
+
+.hide { display: none; }
+.show { display: block; }
+.invisible { visibility: hidden; }
+
+.full { width: 100%; }
+.half { width: 50%; }
+
+.squared { @include radius(0); }
+.round { @include radius($default-radius); }
+.circle { @include radius(50%); }
+
+.no-bg { background-color: transparent; }
+@include bg;
+
+@include spacing(push, $default-spacing, margin);
+@include spacing(flush, 0, margin);
+@include spacing(soft, $default-spacing, padding);
+@include spacing(hard, 0, padding);
+
+@include text-sizes;
+@include text-colors;

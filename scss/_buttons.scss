@@ -1,0 +1,41 @@
+@import 'mixins/buttons';
+
+.button {
+  padding: $button-padding;
+  margin: $button-margin;
+  font-family: $button-fontfamily;
+  @include radius($button-radius);
+  @include shadow($button-shadow);
+  @include sizes($button-sizes);
+  @include button-colors($button-colors);
+
+  &.compact {
+    padding: $button-compact-padding;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.link {
+    background-color: transparent;
+    border: 0;
+    color: $link-color;
+
+    &:hover {
+      color: $link-color_hover;
+      text-decoration: $link-decoration_hover;
+    }
+
+    &:active {
+      color: $link-color_active;
+      text-decoration: $link-decoration_active;
+    }
+  }
+
+  &.full {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

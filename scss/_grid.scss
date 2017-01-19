@@ -1,0 +1,117 @@
+.row {
+  @include clearfix();
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+[class*='col-'] {
+  @include box-sizing(border-box);
+  float: left;
+  min-height: 1px;
+
+  @if ($grid-automatic-gutters) {
+    padding: $grid-spacing-y/2 $grid-spacing-x/2;
+  }
+}
+
+//Gutters
+.gutter-x {
+  & > [class*='col-'] {
+    padding-left: $grid-spacing-x;
+    padding-right: $grid-spacing-x;
+  }
+}
+
+.gutter-y {
+  & > [class*='col-'] {
+    padding-bottom: $grid-spacing-y;
+  }
+}
+
+.no-gutter {
+  & > [class*='col-'] {
+    padding: 0;
+  }
+}
+
+//Full column
+.col-full { width: 100%; }
+
+$col-width: (100%/$grid-rows);
+
+//Generates all column sizes
+@for $i from 1 through $grid-rows {
+  .col-#{$i} {
+    width: $col-width*$i;
+  }
+
+  .col-offset-#{$i} {
+    margin-left: $col-width*$i;
+  }
+}
+
+//Generates all columns sizes in fractions
+@for $i from 1 through 6 {
+  @for $j from 2 through 7 {
+    @if $i != $j and $i < $j {
+      .col-#{$i}-#{$j} {
+        width: 100%*$i/$j;
+      }
+
+      .col-offset-#{$i}-#{$j} {
+        margin-left: 100%*$i/$j;
+      }
+    }
+  }
+}
+
+//Generates the same above for reponsive design
+@each $size, $query in $breakpoints {
+  @media #{$query} {
+    @for $i from 1 through $grid-rows {
+      .col-#{$size}-#{$i} {
+        width: $col-width*$i;
+      }
+
+      .col-#{$size}-offset-#{$i} {
+        margin-left: $col-width*$i;
+      }
+    }
+
+    @for $i from 1 through 6 {
+      @for $j from 2 through 7 {
+        @if $i != $j and $i < $j {
+          .col-#{$size}-#{$i}-#{$j} {
+            width: 100%*$i/$j;
+          }
+
+          .col-#{$size}-offset-#{$i}-#{$j} {
+            margin-left: 100%*$i/$j;
+          }
+        }
+      }
+    }
+
+    .col-#{$size}-full { width: 100%; }
+
+    .no-gutter-#{$size} {
+      & > [class*='col-'] {
+        padding-right: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .no-gutter-x-#{$size} {
+      & > [class*='col-'] {
+        padding-right: 0;
+      }
+    }
+
+    .no-gutter-y-#{$size} {
+      & > [class*='col-'] {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

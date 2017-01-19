@@ -1,0 +1,31 @@
+.container {
+    @include clearfix();
+    @include box-sizing(border-box);
+    width: $container-default-width;
+    max-width: $container-default-width;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+
+    //Sizes
+    @each $variant, $size in $container-sizes {
+        &.#{$variant} {
+            width: $size;
+            max-width: $size;
+        }
+    }
+
+    //Fluid
+    &.fluid {
+        width: 100%;
+    }
+
+    &.full {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    &.spaced {
+        padding: $default-spacing;
+    }
+}

@@ -1,0 +1,40 @@
+.alert {
+    padding: $alert-padding;
+    margin: $alert-margin;
+    @include radius($alert-radius);
+    font-family: $alert-fontfamily;
+    font-size: $alert-fontsize;
+
+    strong {
+        font-family: inherit;
+        font-size: $alert-fontsize;
+        font-weight: bold;
+        display: inline-block;
+        line-height: $alert-lineheight;
+    }
+
+    p {
+      font-family: inherit;
+      font-size: $alert-fontsize;
+      margin: 0;
+      display: inline-block;
+    }
+
+    .icon {
+        text-align: center;
+        float: left;
+        margin-right: $icon-margin;
+
+        i {
+          font-size: $alert-lineheight;
+          line-height: $icon-lineheight;
+          width: $icon-width;
+        }
+    }
+
+    &.message {
+        float: left;
+    }
+
+    @include colors($alert-colors);
+}

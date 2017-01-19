@@ -1,0 +1,7 @@
+@function color($c_name, $c_variant, $source:$colors) {
+    @return map-get(map-get($source, $c_name), $c_variant);
+}
+
+@function size($s_name, $s_variant, $source:$sizes) {
+    @return map-get(map-get($source, $s_name), $s_variant);
+}

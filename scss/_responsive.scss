@@ -1,0 +1,19 @@
+[class*='show-'] {
+    display: none;
+}
+
+[class*='hide-'] {
+    display: block;
+}
+
+@each $size, $query in $breakpoints {
+    @media #{$query} {
+        .show-#{$size} {
+            display: block;
+        }
+
+        .hide-#{$size} {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.box, .box-header, .box-body, .box-footer {
+    @include clearfix();
+}
+
+.box {
+    background-color: $box-bgcolor;
+    border: $box-border;
+    overflow: hidden;
+    @include radius($box-radius);
+    @include shadow($box-shadow);
+}
+
+.box-header {
+    background-color: $box-header-bgcolor;
+    border-bottom: $box-header-border;
+    padding: $box-header-padding;
+    @include radius-top($box-radius);
+
+    .title {
+        font-size: $box-title-fontsize;
+        color: $box-title-color;
+    }
+}
+
+.box-body {
+    padding: $box-padding;
+}
+
+.box-footer {
+    background-color: $box-footer-bgcolor;
+    border-top: $box-footer-border;
+    padding: $box-footer-padding;
+    @include radius-bottom($box-radius);
+}

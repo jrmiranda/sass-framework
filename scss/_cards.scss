@@ -1,0 +1,38 @@
+.card {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: $card-bgcolor;
+  border: $card-border;
+  overflow: hidden;
+  @include radius($card-radius);
+  font-family: $card-fontfamily;
+
+  .card-header {
+    border-bottom: $card-border;
+
+    img {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .card-body {
+    padding: 15px;
+
+    .card-title {
+      margin: 0 0 $card-title-margin 0;
+      font-size: $card-title-fontsize;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: $card-text-size;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

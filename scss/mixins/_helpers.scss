@@ -1,0 +1,37 @@
+@mixin spacing($name, $spacing, $type) {
+  .#{$name} { #{$type}: $spacing !important; }
+  .#{$name}-top { #{$type}-top: $spacing !important; }
+  .#{$name}-right { #{$type}-right: $spacing !important; }
+  .#{$name}-bottom { #{$type}-bottom: $spacing !important; }
+  .#{$name}-left { #{$type}-left: $spacing !important; }
+  .#{$name}-ends { #{$type}-top: $spacing !important; #{$type}-bottom: $spacing !important; }
+  .#{$name}-sides { #{$type}-left: $spacing !important; #{$type}-right: $spacing !important; }
+}
+
+@mixin text-sizes {
+  @each $variant, $size in $font-sizes {
+    .text-#{$variant} {
+      font-size: $size !important;
+    }
+  }
+}
+
+@mixin text-colors {
+  @each $variant, $color in $font-colors {
+    .text-#{$variant} {
+      color: $color !important;
+    }
+  }
+}
+
+@mixin bg {
+  @each $variant, $color in $colors {
+    .#{$variant}-bg {
+      background-color: $color !important;
+    }
+
+    .light-#{$variant}-bg {
+      background-color: lighten($color, $bg-lighten) !important;
+    }
+  }
+}

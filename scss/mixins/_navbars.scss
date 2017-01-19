@@ -1,0 +1,26 @@
+@mixin navbar-sizes {
+  @each $variant, $fontsize in $nav-sizes {
+    $push: $base-fontsize * $fontsize/(1em) * (($nav-lineheight + 2 * $nav-padding)/(1em)) + 1px;
+
+    @if ($variant == null) {
+      .nav {
+        font-size: $fontsize;
+      }
+
+      .nav-push {
+        padding-top: $push;
+      }
+    }
+    @else {
+      .nav {
+        &.#{$variant} {
+          font-size: $fontsize;
+        }
+      }
+    }
+
+    .nav-#{$variant}-push {
+      padding-top: $push;
+    }
+  }
+}

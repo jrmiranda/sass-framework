@@ -1,0 +1,50 @@
+.table {
+  font-size: $table-fontsize;
+  background-color: $table-bgcolor;
+  border-collapse: collapse;
+
+  :not(thead) > tr {
+    border-bottom: $table-border;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  th, td {
+    padding: 0.6rem;
+    float: none;
+  }
+
+  thead {
+    tr {
+      border-bottom: $table-header-border;
+    }
+  }
+
+  &.compact {
+    th, td {
+      padding: $table-compact-padding;
+    }
+  }
+
+  &.bordered {
+    th, td {
+      border: $table-border;
+    }
+  }
+
+  &.striped {
+    :not(thead) > tr {
+      &:nth-child(odd) {
+        background-color: $table-striped-bgcolor;
+      }
+    }
+  }
+
+  &.hover {
+    :not(thead) > tr:hover {
+      background-color: $table-hover-bgcolor;
+    }
+  }
+}

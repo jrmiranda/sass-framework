@@ -1,0 +1,89 @@
+@import 'mixins/forms';
+
+@include inputs {
+  width: 100%;
+  display: block;
+  font-weight: normal;
+  background-color: $input-bgcolor;
+  margin: $input-margin;
+  padding: $input-padding;
+  @include radius($input-radius);
+  @include input-colors;
+  @include input-sizes;
+
+  &.compact {
+    padding: $input-padding-compact;
+  }
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 1px;
+}
+
+label {
+  font-size: 0.9em;
+  display: block;
+  color: $form-label-color;
+}
+
+.input-group,
+.checkbox-group,
+.radio-group {
+  margin-bottom: $input-group-margin;
+  @include clearfix;
+
+  small,
+  .form-text {
+    display: block;
+    color: $form-help-color;
+    font-size: $form-help-fontsize;
+    text-align: left;
+  }
+}
+
+.check-group,
+.radio-group {
+  label {
+    display: block;
+    color: $form-check-color;
+    margin: $form-check-margin;
+    line-height: $form-check-lineheight;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input {
+      margin-right: $form-check-spacing;
+    }
+  }
+}
+
+form,
+.form,
+.input-group {
+  &.horizontal {
+    div:not(.check-group):not(.radio-group) > label {
+      text-align: right;
+      margin: $input-margin;
+      padding: $input-padding;
+      border: $input-border-size solid transparent;
+    }
+  }
+
+  &.inline {
+    .check-group label,
+    .radio-group label {
+      margin: $input-margin;
+      padding: $input-padding;
+      border: $input-border-size solid transparent;
+    }
+  }
+
+  @include input-group-colors;
+  @include input-group-sizes;
+}
