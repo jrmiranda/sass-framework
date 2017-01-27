@@ -1,0 +1,53 @@
+@mixin container-sizes {
+  @each $variant, $size in $container-sizes {
+    &.#{$variant} {
+      width: $size;
+      max-width: $size;
+    }
+  }
+}
+
+@mixin container-breakpoints {
+  @each $size, $query in $breakpoints {
+    @media #{$query} {
+      &.#{$size}-fluid {
+        width: 100%;
+      }
+
+      &.#{$size}-full {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@mixin container-breakpoints-up {
+  @each $size, $query in $breakpoints-up {
+    @media #{$query} {
+      &.#{$size}-up-fluid {
+        width: 100%;
+      }
+
+      &.#{$size}-up-full {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@mixin container-breakpoints-down {
+  @each $size, $query in $breakpoints-down {
+    @media #{$query} {
+      &.#{$size}-down-fluid {
+        width: 100%;
+      }
+
+      &.#{$size}-down-full {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

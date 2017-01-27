@@ -41,10 +41,23 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: normal;
     }
 
+    &.subheader {
+      color: $headings-small-color;
+    }
+
     @if ($use-responsive-typo) {
       @include responsive-font-size(map-get($headings-map, $h));
     }
   }
+}
+
+.page-header {
+  border-bottom: 1px solid #eee;
+}
+
+.lead {
+  font-size: 1.5em;
+
 }
 
 ul, ol {
@@ -105,4 +118,9 @@ hr, .separator {
     margin: $hr-margin;
     border:0;
     border-bottom: $hr-border;
+
+    &.fit-box {
+      margin-left: -$box-padding-sides;
+      margin-right: -$box-padding-sides;
+    }
 }

@@ -38,6 +38,10 @@
       {
         @include make-size($size-map);
       }
+
+      .form-text {
+        @include make-size($size-map);
+      }
     }
   }
 }

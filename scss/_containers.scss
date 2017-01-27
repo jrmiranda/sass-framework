@@ -1,31 +1,33 @@
+@import 'mixins/containers.scss';
+
 .container {
-    @include clearfix();
-    @include box-sizing(border-box);
-    width: $container-default-width;
-    max-width: $container-default-width;
-    height: auto;
-    margin: 0 auto;
-    overflow: hidden;
+  @include box-sizing(border-box);
+  width: $container-default-width;
+  max-width: $container-default-width;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  @include clearfix();
 
-    //Sizes
-    @each $variant, $size in $container-sizes {
-        &.#{$variant} {
-            width: $size;
-            max-width: $size;
-        }
-    }
+  //Loop through sizes array
+  @include container-sizes;
 
-    //Fluid
-    &.fluid {
-        width: 100%;
-    }
+  //Fluid and Full for responsive design
+  @include container-breakpoints;
+  @include container-breakpoints-up;
+  @include container-breakpoints-down;
 
-    &.full {
-        width: 100%;
-        max-width: 100%;
-    }
+  //Fluid
+  &.fluid {
+    width: 100%;
+  }
 
-    &.spaced {
-        padding: $default-spacing;
-    }
+  &.full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.spaced {
+    padding: $default-spacing;
+  }
 }

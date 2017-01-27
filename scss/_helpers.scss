@@ -26,8 +26,14 @@
 @include bg;
 
 @include spacing(push, $default-spacing, margin);
-@include spacing(flush, 0, margin);
+@include spacing(push-2x, $default-spacing*2, margin);
+@include spacing(push-half, $default-spacing/2, margin);
+
 @include spacing(soft, $default-spacing, padding);
+@include spacing(soft-2x, $default-spacing*2, padding);
+@include spacing(soft-half, $default-spacing/2, padding);
+
+@include spacing(flush, 0, margin);
 @include spacing(hard, 0, padding);
 
 @include text-sizes;

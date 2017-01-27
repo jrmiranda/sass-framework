@@ -1,19 +1,43 @@
 [class*='show-'] {
-    display: none;
+  display: none;
 }
 
 [class*='hide-'] {
-    display: block;
+  display: block;
 }
 
 @each $size, $query in $breakpoints {
-    @media #{$query} {
-        .show-#{$size} {
-            display: block;
-        }
-
-        .hide-#{$size} {
-            display: none;
-        }
+  @media #{$query} {
+    .show-#{$size} {
+      display: block;
     }
+
+    .hide-#{$size} {
+      display: none;
+    }
+  }
+}
+
+@each $size, $query in $breakpoints-up {
+  @media #{$query} {
+    .show-#{$size}-up {
+      display: block;
+    }
+
+    .hide-#{$size}-up {
+      display: none;
+    }
+  }
+}
+
+@each $size, $query in $breakpoints-down {
+  @media #{$query} {
+    .show-#{$size}-down {
+      display: block;
+    }
+
+    .hide-#{$size}-down {
+      display: none;
+    }
+  }
 }

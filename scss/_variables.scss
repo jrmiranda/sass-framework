@@ -42,10 +42,10 @@ Defaults
 $default-spacing: 10px;
 $default-bgcolor: #fff;
 $default-color: #222222;
-$default-border: 1px solid #ddd;
-$default-radius: 0.2em;
+$default-border: 1px solid #e5eaea;
+$default-radius: 0.3em;
 
-$bg-color: #efefef;
+$bg-color: #efeff0;
 $bg-lighten: 40%;
 
 
@@ -68,6 +68,18 @@ $breakpoints: (
   lg: "(min-width: #{$screen-lg})"
 );
 
+$breakpoints-up: (
+sm: "(min-width: #{$screen-sm})",
+md: "(min-width: #{$screen-md})",
+lg: "(min-width: #{$screen-lg})"
+);
+
+$breakpoints-down: (
+  sm: "(max-width: #{$screen-sm})",
+  md: "(max-width: #{$screen-md})",
+  lg: "(max-width: #{$screen-lg})"
+);
+
 $typo-breakpoints: (
   small: "(max-width: 600px)",
   large: "(min-width: 1200px)"
@@ -77,13 +89,15 @@ $typo-breakpoints: (
 /*
 Typography
 */
-$font-sans-serif: 'helvetica', 'arial', sans-serif;
+$font-sans-serif: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+//$font-sans-serif: 'Montserrat', 'arial', sans-serif;
 $font-serif: 'Noto Serif', serif;
+$font-display: 'Raleway', sans-serif;
 
 //Base
 $base-font-family: $font-sans-serif;
 $base-fontsize: 16px;
-$base-lineheight: 1.5;
+$base-lineheight: 1.4;
 $base-fontcolor: $default-color;
 
 $base-map: (
@@ -100,7 +114,7 @@ $p-map: (
   large: 100%
 );
 
-$link-color: #008bff;
+$link-color: #128bf0;
 $link-color_hover: $link-color;
 $link-decoration_hover: underline;
 $link-color_active: $link-color;
@@ -112,7 +126,7 @@ $small-fontsize: 80%;
 $strong-fontsize: 110%;
 
 $hr-border: $default-border;
-$hr-margin: 10px 0;
+$hr-margin: 20px 0;
 
 //Headings
 $headings-color: $default-color;
@@ -126,7 +140,7 @@ $headings-small-color: #888;
 
 $headings: (
   h1: 2.40rem,
-  h2: 2.00rem,
+  h2: 1.95rem,
   h3: 1.75rem,
   h4: 1.50rem,
   h5: 1.25rem,
@@ -165,7 +179,7 @@ $font-sizes: (
   tiny:   0.750rem,
   small:  0.875rem,
   base:   1.000rem,
-  large:  1.250rem,
+  large:  1.400rem,
   huge:   1.750rem
 );
 
@@ -222,7 +236,9 @@ Boxes
 $box-bgcolor: $default-bgcolor;
 $box-border: 1px solid #eaeaea;
 $box-radius: $default-radius;
-$box-padding: 0.5em 0.6em;
+$box-padding-ends: 0.5em;
+$box-padding-sides: 0.6em;
+$box-padding: $box-padding-ends $box-padding-sides;
 $box-shadow: 1px 1px 1px 0px rgba(100,100,100,0.07);
 
 $box-header-bgcolor: #fbfbfb;
@@ -283,7 +299,7 @@ $button-fontfamily: 'Roboto', sans-serif;
 $button-padding: 0.3em 0.6em;
 $button-compact-padding: 0.1em 0.6em;
 $button-margin: 0;
-$button-radius: 0.15em;
+$button-radius: 0.25em;
 $button-shadow: 0 1px 1px -1px rgba(255,255,255,1) inset;
 
 $button-border-size: 1px;
@@ -318,14 +334,14 @@ Forms
 */
 $input-bgcolor: $default-bgcolor;
 $input-margin: 0.2em 0;
-$input-padding: 0.5em 0.6em;
+$input-padding: 0.45em 0.6em;
 $input-padding-compact: 0.2em;
 $input-spacing: 0.3em;
 $input-radius: $default-radius;
 $input-border-size: 1px;
 $input-border-lighten: 19%;
 
-$form-check-color: #555;
+$form-check-color: #222;
 $form-check-margin: 0.2em 0;
 $form-check-lineheight: 1.4;
 $form-check-spacing: 0.3em;
@@ -406,7 +422,7 @@ Cards
 $card-bgcolor: $default-bgcolor;
 $card-border: $default-border;
 $card-radius: $default-radius;
-$card-fontfamily: sans-serif;
+$card-fontfamily: inherit;
 $card-padding: 15px;
 
 $card-title-margin: 0.4em;

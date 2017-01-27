@@ -1,0 +1,69 @@
+@mixin gutters($prefix: '') {
+  @if($prefix != '') {
+    $prefix: $prefix + '-';
+  }
+
+  &.#{$prefix}collapse-x,
+  &.#{$prefix}collapse {
+    & > [class*='col-'] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.#{$prefix}collapse-y,
+  &.#{$prefix}collapse {
+    & > [class*='col-'] {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.#{$prefix}uncollapse-x,
+  &.#{$prefix}uncollapse {
+    margin-left: $grid-spacing-x/-2;
+    margin-right: $grid-spacing-x/-2;
+
+    & > [class*='col-'] {
+      padding-left: $grid-spacing-x/2;
+      padding-right: $grid-spacing-x/2;
+    }
+  }
+
+  &.#{$prefix}uncollapse-y,
+  &.#{$prefix}uncollapse {
+    margin-top: $grid-spacing-y/-2;
+    margin-bottom: $grid-spacing-y/-2;
+
+    & > [class*='col-'] {
+      padding-top: $grid-spacing-y/2;
+      padding-bottom: $grid-spacing-y/2;
+    }
+  }
+}
+
+@mixin col($i, $j: '', $size: '') {
+  $col-width: (100%/$grid-rows);
+
+  @if($size != '') {
+    $size: $size + '-';
+  }
+
+  @if($j == '') {
+    .col-#{$size}#{$i} {
+      width: $col-width*$i;
+    }
+
+    .col-#{$size}offset-#{$i} {
+      margin-left: $col-width*$i;
+    }
+  } @else {
+    .col-#{$size}#{$i}-#{$j} {
+      width: 100%*$i/$j;
+    }
+
+    .col-#{$size}offset-#{$i}-#{$j} {
+      margin-left: 100%*$i/$j;
+    }
+  }
+}

@@ -36,7 +36,6 @@ label {
   margin-bottom: $input-group-margin;
   @include clearfix;
 
-  small,
   .form-text {
     display: block;
     color: $form-help-color;
