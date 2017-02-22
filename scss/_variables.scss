@@ -42,7 +42,10 @@ Defaults
 $default-spacing: 10px;
 $default-bgcolor: #fff;
 $default-color: #222222;
+$default-color-light: #757575;
 $default-border: 1px solid #e5eaea;
+$default-border-light: 1px solid #eee;
+$default-border-dark: 1px solid #ddd;
 $default-radius: 0.3em;
 
 
@@ -66,9 +69,9 @@ $breakpoints: (
 );
 
 $breakpoints-up: (
-sm: "(min-width: #{$screen-sm})",
-md: "(min-width: #{$screen-md})",
-lg: "(min-width: #{$screen-lg})"
+  sm: "(min-width: #{$screen-sm})",
+  md: "(min-width: #{$screen-md})",
+  lg: "(min-width: #{$screen-lg})"
 );
 
 $breakpoints-down: (
@@ -139,7 +142,7 @@ $headings-fontweight: 400;
 $headings-margin:  0 0 0.8rem 0;
 
 $headings-small-fontsize: 70%;
-$headings-small-color: #888;
+$headings-small-color: $default-color-light;
 
 $headings: (
   h1: 2.40rem,
@@ -204,7 +207,7 @@ $hr-margin: 20px 0;
 $lead-fontsize: 150%;
 
 $nav-title-fontsize: 0.8em;
-$nav-title-color: #888;
+$nav-title-color: $default-color-light;
 $nav-title-margin: 0 0 0.8em 0;
 
 //Lists
@@ -254,14 +257,14 @@ $box-padding: $box-padding-ends $box-padding-sides;
 $box-shadow: 1px 1px 1px 0px rgba(100,100,100,0.07);
 
 $box-header-bgcolor: #fbfbfb;
-$box-footer-bgcolor: $box-header-bgcolor;
-$box-header-border: 1px solid #eee;
-$box-footer-border: $box-header-border;
+$box-header-border: $default-border-light;
 $box-header-padding: 0.2em 0.5em;
+$box-footer-bgcolor: $box-header-bgcolor;
+$box-footer-border: $box-header-border;
 $box-footer-padding: $box-header-padding;
 
 $box-title-fontsize: 0.8em;
-$box-title-color: #777;
+$box-title-color: $default-color-light;
 
 
 /*
@@ -356,7 +359,7 @@ $input-radius: $default-radius;
 $input-border-size: 1px;
 $input-border-lighten: 19%;
 
-$form-check-color: #222;
+$form-check-color: $default-color;
 $form-check-margin: 0.2em 0;
 $form-check-lineheight: 1.4;
 $form-check-spacing: 0.3em;
@@ -366,7 +369,7 @@ $form-label-color: inherit;
 
 $input-group-margin: 1em;
 
-$form-help-color: #777;
+$form-help-color: $default-color-light;
 $form-help-fontsize: 0.9em;
 
 $input-sizes: (
@@ -391,7 +394,7 @@ Menus
 */
 $menu-padding: 0.3em 0.7em;
 $menu-lineheight: 1.5;
-$menu-color: #777;
+$menu-color: $default-color-light;
 $menu-color_hover: $default-color;
 $menu-bgcolor_hover: rgba(0, 0, 0, 0.03);
 $menu-light-bgcolor_hover: rgba(255, 255, 255, 0.8);
@@ -414,10 +417,10 @@ $nav-lineheight: 1.5;
 $nav-padding: 0.8em;
 $nav-border-size: 1px;
 
-$nav-menu-color: #888;
-$nav-menu-color_hover: #333;
+$nav-menu-color: $default-color-light;
+$nav-menu-color_hover: $default-color;
 $nav-menu-bgcolor_hover: #fafafa;
-$nav-menu-border: 1px solid #eee;
+$nav-menu-border: $default-border-light;
 
 $nav-menu-dark-color: #bbb;
 $nav-menu-dark-color_hover: #f0f0f0;
@@ -463,17 +466,54 @@ Dropdown
 */
 $z-dropdown: 1000;
 
-$dropdown-bgcolor: #fff;
+$dropdown-bgcolor: $default-bgcolor;
 $dropdown-bgcolor_hover: #f5f5f5;
 $dropdown-border: 1px solid #d5d5d5;
 $dropdown-margin: 2px 0;
 $dropdown-padding: 5px 0;
 $dropdown-radius: $default-radius;
-$dropdown-color: #777;
+$dropdown-color: $default-color-light;
 $dropdown-color_hover: #555;
 $dropdown-fontsize: 0.85em;
 
 $dropdown-item-padding: 2px 15px;
 
-$dropdown-separator-border: 1px solid #eee;
+$dropdown-separator-border: $default-border-light;
 $dropdown-separator-margin: 5px 0;
+
+
+/*
+Modals
+*/
+$z-modal: 1000;
+$z-backdrop: 900;
+
+$modal-top-spacing: 50px;
+$modal-bgcolor: $default-bgcolor;
+$modal-border: $default-border;
+$modal-color: $default-color;
+$modal-light-border: $default-border-light;
+$modal-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+$modal-radius: $default-radius;
+
+$modal-header-border: 1px solid #eee;
+$modal-header-padding: 8px 10px;
+$modal-footer-border: $modal-header-border;
+$modal-footer-padding: $modal-header-padding;
+
+$modal-title-fontsize: 1em;
+$modal-title-color: #333;
+$modal-title-fontweight: bold;
+
+$modal-body-padding: 15px 10px;
+$modal-body-fontsize: 1em;
+
+$modal-sizes: (
+  null: 500px,
+  tiny: 400px,
+  small: 600px,
+  large: 700px,
+  huge: 900px
+);
+
+$backdrop-bgcolor: rgba(0,0,0,0.1);

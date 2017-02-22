@@ -51,7 +51,6 @@
     <form class="large" action="index.html" method="post">
       <div class="input-group">
         <input type="text" name="" placeholder="Nome de Usuário">
-        <small class="text-red"></small>
       </div>
       <div class="input-group">
         <input type="text" name="" placeholder="E-mail">
@@ -63,7 +62,7 @@
         <input type="password" name="" placeholder="Confirme sua Senha">
       </div>
       <div class="input-group">
-        <input type="submit" class="large green full button" value="Enviar">
+        <input type="submit" class="large green full button" value="Cadastrar">
       </div>
     </form>
   </div>

@@ -1,5 +1,5 @@
 <?php
-$colors = array('red', 'yellow', 'green', 'blue', 'light', 'dark', 'black');
+$colors = array('red', 'yellow', 'green', 'blue', 'white', 'light', 'dark', 'black');
 $sizes = array('tiny', 'small', 'large', 'huge');
 
 function colors($str, $base = false) {

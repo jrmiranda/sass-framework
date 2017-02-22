@@ -1,6 +1,6 @@
 <style media="screen">
 html, body {
-  background-color: #fcfcfc;
+  background-color: #fbfbfb;
 }
 
 .box {
@@ -30,24 +30,51 @@ html, body {
 
 .example {
   display: block;
-  padding: 10px;
+  padding: 10px 12px;
   background-color: #fafafa;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.display {
+  font-family: 'Segoe UI';
+  padding: 2em;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.display h1 {
+  font-size: 5em;
+  font-weight: 300;
+}
+
+.button {
+  //font-size: 15px !important;
+  box-shadow: none;
+  line-height: 1;
 }
 </style>
 
-<div class="fluid large container">
+
+<div class="fluid huge container">
+  <div class="display text-center">
+    <h1>Testando Display</h1>
+    <h3><?php echo $faker->sentence(15); ?></h3>
+    <button class="blue huge button">Clique Aqui</button>
+  </div>
+
   <div class="row uncollapse">
-    <div class="col-1-4">
+    <div class="col-1-4 col-xs-full">
       <div class="soft-2x-sides">
-        <ul class="small menu">
+        <ul class="small unstyled menu">
           <li><a href="#">Introdução</a></li>
           <li><a href="#">Grid</a></li>
           <li><a href="#">Containers</a></li>
           <li><a href="#">Tipografia</a></li>
           <li><a href="#">Responsivo</a></li>
-          <hr>
+          <li class="separator"></li>
           <li><a href="#">Boxes</a></li>
           <li><a href="#">Botões</a></li>
           <li><a href="#">Formulários</a></li>
@@ -56,23 +83,16 @@ html, body {
         </ul>
       </div>
     </div>
-    <div class="col-3-4">
-      <div class="">
+    <div class="col-3-4 col-xs-full">
+      <div class="soft-2x-sides">
         <h1>Tipografia</h1>
         <h4 class="subheader">A tipografia no framework é feita para deixar sua vida mais fácil.</h4>
         <hr>
 
         <h2>Cabeçalhos</h2>
-        <p>Cabeçalhos neste framework são baseados em sequencias numericas.</p>
-        <div class="code">
-          h1. This is a very large header.<br>
-          h2. This is a large header.<br>
-          h3. This is a medium header.<br>
-          h4. This is a moderate header.<br>
-          h5. This is a small header.<br>
-          h6. This is a tiny header.<br>
-        </div>
+        <p><?php echo $faker->paragraph(3); ?></p>
         <div class="example">
+          <span class="nav-title">exemplo</span>
           <h1>h1. This is a very large header.</h1>
           <h2>h2. This is a large header.</h2>
           <h3>h3. This is a medium header.</h3>
@@ -80,10 +100,28 @@ html, body {
           <h5>h5. This is a small header.</h5>
           <h6>h6. This is a tiny header.</h6>
         </div>
+        <div class="code">
+          <span class="nav-title">código</span>
+          h1. This is a very large header.<br>
+          h2. This is a large header.<br>
+          h3. This is a medium header.<br>
+          h4. This is a moderate header.<br>
+          h5. This is a small header.<br>
+          h6. This is a tiny header.<br>
+        </div>
         <hr>
 
         <h2>Parágrafos</h2>
-        <p>A tipografia no framework é feita para deixar sua vida mais fácil.</p>
+        <p><?php echo $faker->paragraph(3); ?></p>
+        <div class="example">
+          <p><?php echo $faker->paragraph(5); ?></p>
+          <p><?php echo $faker->paragraph(5); ?></p>
+          <p><?php echo $faker->paragraph(5); ?></p>
+        </div>
+        <hr>
+
+        <h2>Listas</h2>
+        <p><?php echo $faker->paragraph(3); ?></p>
       </div>
     </div>
   </div>

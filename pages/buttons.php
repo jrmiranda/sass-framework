@@ -1,3 +1,9 @@
+<style media="screen">
+  .button {
+    margin: 5px;
+  }
+</style>
+
 <div class="fluid spaced container">
   <div class="box box-body">
     <button class="link button">link</button>
@@ -5,7 +11,9 @@
     <span class="link">teste</span>
     <?php sizes('<button class="red [size] button">[size]</button>', true); ?>
     <br><br>
-    <?php colors('<button class="[color] button">[color]</button>', true); ?>
+    <?php sizes('<button class="compact red [size] button">[size]</button>', true); ?>
+    <br><br>
+    <?php colors('<button class="[color] button">Button [color]</button>', true); ?>
     <br><br>
     <?php colors('<button class="[color] disabled button">[color]</button>', true); ?>
     <br><br>

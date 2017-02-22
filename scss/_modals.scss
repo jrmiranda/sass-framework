@@ -1,42 +1,16 @@
 @import 'mixins/modals';
 
-.backdrop {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.1);
-  display: none;
-}
-
-$z-modal: 1000;
-
-$modal-top-spacing: 50px;
-$modal-bgcolor: #fff;
-$modal-border: 1px solid #ddd;
-$modal-light-border: 1px solid #eee;
-$modal-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
-
-
-
-$modal-sizes: (
-  null: 500px,
-  tiny: 400px,
-  small: 600px,
-  large: 700px,
-  huge: 900px
-);
-
 .modal {
+  display: none;
   position: absolute;
-  z-index: 1000;
+  z-index: $z-modal;
   left: 50%;
-  top: 50px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  @include shadow(0 0 10px 2px rgba(0,0,0,0.1));
-  @include radius($default-radius);
+  top: $modal-top-spacing;
+  background-color: $modal-bgcolor;
+  border: $modal-border;
+  color: $modal-color;
+  @include shadow($modal-shadow);
+  @include radius($modal-radius);
   @include modal-sizes;
 
   div {
@@ -44,24 +18,36 @@ $modal-sizes: (
   }
 
   .modal-header {
-    border-bottom: 1px solid #eee;
-    padding: 8px 10px;
+    border-bottom: $modal-header-border;
+    padding: $modal-header-padding;
 
     .modal-title {
-      font-size: 1em;
-      color: #333;
-      font-weight: bold;
+      font-size: $modal-title-fontsize;
+      font-weight: $modal-title-fontweight;
+      color: $modal-title-color;
     }
   }
 
   .modal-body {
-    padding: 15px 10px;
+    padding: $modal-body-padding;
+    font-size: $modal-body-fontsize;
   }
 
   .modal-footer {
-    border-top: 1px solid #eee;
-    padding: 8px 10px;
+    border-top: $modal-footer-border;
+    padding: $modal-footer-padding;
   }
+}
+
+.backdrop {
+  z-index: $z-backdrop;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $backdrop-bgcolor;
+  display: none;
 }
 
 button.close {
