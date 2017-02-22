@@ -1,48 +1,84 @@
 (function($) {
+  "use strict"
+
+  var preferences = {
+    close_keycode: 27
+  }
+
   var Dropdown = function($self, options) {
-    this.$self = $self;
-    this.options = $.extend({}, $.fn.dropdown.defaults, options);
+    this.$menu = $self.find('.dropdown-menu');
+    this.options = $.extend({}, this.defaults, options);
+    this.status = '';
   }
 
-  Dropdown.prototype.color = function() {
-    $(this).css('color', settings.color);
-  }
-
-  Dropdown.prototype.size = function() {
-    $(this).css('font-size', settings.size);
-  }
+  Dropdown.prototype = {
+    defaults: {  },
+    show: function() {
+      this.$menu.css('display', 'block');
+      this.status = 'shown';
+    },
+    hide: function() {
+      this.$menu.css('display', 'none');
+      this.status = 'hidden';
+    },
+    toggle: function() {
+      if (this.$menu.css('display') == 'block') {
+        this.hide();
+      } else {
+        this.show();
+      }
+    }
+  };
 
   $.fn.dropdown = function(option) {
     var options = typeof option == 'object' && option;
 
-    var defaults = {
-      color: '#f00',
-      size: '20px'
-    }
-
     this.each(function() {
-      var $this = $(this);
-      var data = $this.data('dropdown');
+      var instance = $(this).data('dropdown');
 
-      if (!$dropdown) {
-        $dropdown = new Dropdown($this, options);
-        $this.data('dropdown', $dropdown);
+      if (!instance) {
+        instance = new Dropdown($(this), options);
+        $(this).data('dropdown', instance);
       }
 
       if (typeof option == 'string') {
-        $dropdown[option]();
+        instance[option]();
       }
     });
 
     return this;
   }
 
-  $(document).on('click', '[data-open=dropdown]', function() {
-    var target = $($(this).data('target'));
-    target.dropdown({
-      color: '#f00'
-    });
-    target.dropdown('color');
+  /*
+  * -----------------------
+  * Implementation
+  * -----------------------
+  */
+
+  //Toggle on data-open click
+  $('*[data-toggle=dropdown]').on('click', function(event) {
+    event.stopPropagation();
+    var dropdown = $($(this).parent('.dropdown'));
+
+    $('.dropdown').not(dropdown).dropdown('hide');
+    dropdown.dropdown('toggle');
+  });
+
+  //Prevent close from dropdown itself
+  $('.dropdown-menu').on('click', function() {
+    event.stopPropagation();
+  });
+
+  //Close on html click
+  $('html').on('click', function() {
+    $('.dropdown').dropdown('hide');
+  });
+
+  //Close on key press
+  $(document).on('keydown', function(event) {
+    if (event.keyCode == preferences.close_keycode) {
+      $('.dropdown').dropdown('hide');
+    }
   });
 
 }(jQuery));

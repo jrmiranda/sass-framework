@@ -14,6 +14,18 @@
       display: block;
       padding: $menu-padding;
       line-height: $menu-lineheight;
+      @include clearfix;
+    }
+
+    i {
+      display: block;
+      line-height: $menu-lineheight;
+    }
+
+    &.separator {
+      margin: 1em 0;
+      border-bottom: 1px solid #e5e5e5;
+      display: block;
     }
   }
 

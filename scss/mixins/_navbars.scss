@@ -24,3 +24,17 @@
     }
   }
 }
+
+@mixin navbar-colors {
+  @each $variant, $color in $nav-colors {
+    @if ($variant == null) {
+      background-color: nth($color, 1);
+      border: $nav-border-size solid nth($color, 2);
+    } @else {
+      &.#{$variant} {
+        background-color: nth($color, 1);
+        border: $nav-border-size solid nth($color, 2);
+      }
+    }
+  }
+}

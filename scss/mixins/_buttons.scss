@@ -4,7 +4,7 @@
   border: $button-border-size solid darken($border, $button-border-darken);
 
   &:hover {
-    background-color: lighten($bgcolor, $button-bgcolor-lighten_hover);
+    background-color: darken($bgcolor, $button-bgcolor-darken_hover);
   }
 
   &:active,
@@ -15,6 +15,7 @@
   &.disabled {
     background-color: lighten($bgcolor, $button-bgcolor-lighten_disabled);
     color: rgba($color, $button-color-opacity_disabled);
+    border: $button-border-size solid darken($border, $button-border-darken_disabled);
   }
 }
 

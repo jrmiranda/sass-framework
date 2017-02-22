@@ -1,0 +1,13 @@
+@mixin modal-sizes {
+  @each $variant, $size in $modal-sizes {
+    @if($variant == null) {
+      width: $size;
+      margin-left: $size/-2;
+    } @else {
+      &.#{$variant} {
+        width: $size;
+        margin-left: $size/-2;
+      }
+    }
+  }
+}

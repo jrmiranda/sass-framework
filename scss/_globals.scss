@@ -6,3 +6,29 @@ html, body {
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+a, .link {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-color_visited;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $link-color_hover;
+    text-decoration: $link-decoration_hover;
+  }
+
+  &:active {
+    color: $link-color_active;
+    text-decoration: $link-decoration_active;
+  }
+
+  &.disabled {
+    color: rgba($link-color, $link-color-alpha_disabled);
+    text-decoration: none;
+    cursor: not-allowed;
+  }
+}

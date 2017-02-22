@@ -5,7 +5,7 @@
 .box {
     background-color: $box-bgcolor;
     border: $box-border;
-    overflow: hidden;
+    overflow: visible;
     @include radius($box-radius);
     @include shadow($box-shadow);
 }

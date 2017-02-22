@@ -6,7 +6,7 @@
   max-width: $container-default-width;
   height: auto;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
   @include clearfix();
 
   //Loop through sizes array

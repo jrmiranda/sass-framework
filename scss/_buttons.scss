@@ -4,6 +4,7 @@
   padding: $button-padding;
   margin: $button-margin;
   font-family: $button-fontfamily;
+  font-weight: $button-fontweight;
   @include radius($button-radius);
   @include shadow($button-shadow);
   @include sizes($button-sizes);

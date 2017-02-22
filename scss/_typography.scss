@@ -51,13 +51,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.page-header {
-  border-bottom: 1px solid #eee;
+.title {
+
+}
+
+.nav-title {
+  text-transform: uppercase;
+  color: $nav-title-color;
+  font-size: $nav-title-fontsize;
+  font-weight: bold;
+  display: block;
+  margin: $nav-title-margin;
 }
 
 .lead {
-  font-size: 1.5em;
-
+  font-size: $lead-fontsize;
 }
 
 ul, ol {
@@ -86,32 +94,6 @@ ul, ol {
   &.unstyled { list-style-type: none; }
   &.circle { list-style-type: circle; }
   &.disc { list-style-type: disc; }
-}
-
-a, .link {
-  color: $link-color;
-  text-decoration: none;
-
-  &:visited {
-    color: $link-color_visited;
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: $link-color_hover;
-    text-decoration: $link-decoration_hover;
-  }
-
-  &:active {
-    color: $link-color_active;
-    text-decoration: $link-decoration_active;
-  }
-
-  &.disabled {
-    color: rgba($link-color, $link-color-alpha_disabled);
-    text-decoration: none;
-    cursor: not-allowed;
-  }
 }
 
 hr, .separator {

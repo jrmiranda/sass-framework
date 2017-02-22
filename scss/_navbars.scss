@@ -1,9 +1,8 @@
 @import 'mixins/navbars';
 
 .nav {
-  background-color: $nav-bgcolor;
-  border-bottom: $nav-border;
   @include clearfix;
+  @include navbar-colors;
 
   &.fixed {
     position: fixed;
@@ -34,9 +33,7 @@ i {
     line-height: $nav-lineheight;
     padding: $nav-padding;
     padding-left: 0;
-    padding: 0.3em;
     display: block;
-    font-size: 1.4em;
   }
 }
 
@@ -65,16 +62,35 @@ i {
     }
   }
 
-  &.bordered {
-    li {
-      a {
-        border-left: $nav-menu-border;
-      }
+  &.bordered li {
+    border-left: $nav-menu-border;
 
-      &:last-child {
-        border-right: $nav-menu-border;
+    &:last-child {
+      border-right: $nav-menu-border;
+    }
+  }
+
+  &.dark {
+    li a {
+      color: $nav-menu-dark-color;
+
+      &:hover {
+        color: $nav-menu-dark-color_hover;
+        background-color: $nav-menu-dark-bgcolor_hover;
       }
     }
+
+    &.bordered li {
+      border-left: $nav-menu-dark-border;
+
+      &:last-child {
+        border-right: $nav-menu-dark-border;
+      }
+    }
+  }
+
+  &.unstyled li a:hover {
+    background-color: transparent;
   }
 }
 
