@@ -39,4 +39,14 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  &.pill {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &.unstyled {
+    border: none;
+    background-color: transparent;
+  }
 }

@@ -21,7 +21,7 @@
 .squared { @include radius(0); }
 .round { @include radius($default-radius); }
 .circle { @include radius(50%); }
-
+.unbordered { border: none; }
 .no-bg { background-color: transparent; }
 @include bg;
 

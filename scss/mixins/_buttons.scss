@@ -1,15 +1,25 @@
 @mixin make-button-color($bgcolor, $color, $border) {
-  background-color: $bgcolor;
-  color: $color;
-  border: $button-border-size solid darken($border, $button-border-darken);
+  &:not(.pill) {
+    background-color: $bgcolor;
+    color: $color;
+    border: $button-border-size solid darken($border, $button-border-darken);
+  }
 
   &:hover {
     background-color: darken($bgcolor, $button-bgcolor-darken_hover);
+    color: $color;
+    text-decoration: none;
   }
 
   &:active,
   &.active {
     background-color: darken($bgcolor, $button-bgcolor-darken_active);
+    color: $color;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $color;
   }
 
   &.disabled {

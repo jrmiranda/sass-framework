@@ -1,44 +1,44 @@
 <style media="screen">
-  html, body {
-    background-color: #f0f0f0;
-    height: 100%;
-    //background-image: url('img/forest.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
+html, body {
+  background-color: #f0f0f0;
+  height: 100%;
+  //background-image: url('img/forest.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
-  .post {
-    margin: 0 0px;
-  }
+.post {
+  margin: 0 0px;
+}
 
-  img {
-    width: 100%;
-    margin: 10px auto;
-    display: block;
-  }
+img {
+  width: 100%;
+  margin: 10px auto;
+  display: block;
+}
 
-  .box {
-    margin-bottom: 10px;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
+.box {
+  margin-bottom: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
 </style>
 
-<nav class="fixed small dark nav collapse">
+<nav class="fixed collapse navbar">
   <div class="fluid container">
-    <div class="nav-header">
-      <div class="icon-bars change">
-        <div class="icon-bar"></div>
-        <div class="icon-bar"></div>
-        <div class="icon-bar"></div>
+    <div class="navbar-header">
+      <div class="logo left">
+        LOL
       </div>
-      <div class="nav-brand">
-        <i class="fa fa-rocket" style="font-size: 2em; line-height: 1.5; color: #fff;"></i>
+      <div class="icon-bars">
+        <div class="icon-bar"></div>
+        <div class="icon-bar"></div>
+        <div class="icon-bar"></div>
       </div>
     </div>
-    <div class="nav-body">
-      <ul class="dark unstyled bordered right nav-menu">
+    <div class="navbar-body">
+      <ul class="unstyled right dark-stripe-bottom nav">
         <li><a href="#">Home</a></li>
         <li><a href="#">Messages</a></li>
         <li><a href="#">Groups</a></li>
@@ -47,7 +47,34 @@
   </div>
 </nav>
 
-<div class="fluid spaced container">
+<nav class="hide fixed dark navbar collapse">
+  <div class="fluid container">
+    <div class="navbar-header">
+      <div class="icon-bars">
+        <div class="icon-bar"></div>
+        <div class="icon-bar"></div>
+        <div class="icon-bar"></div>
+      </div>
+      <div class="navbar-brand">
+        <i class="fa fa-rocket" style="font-size: 2em; line-height: 1.5; margin-right: 20px; color: #888;"></i>
+      </div>
+    </div>
+    <div class="navbar-body">
+      <div class="group clearfix round left" style="border: 1px solid #ddd; margin-top: 7px;">
+        <input type="text" name="" placeholder="Search" class="unbordered" style="width: 200px;">
+        <button type="button" class="unstyled button" style="background-color: #fff;"><i class="fa fa-search"></i></button>
+      </div>
+      <ul class="dark unstyled right stripe-bottom nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Groups</a></li>
+      </ul>
+      <button type="button" class="blue button right" style="margin-top: 8px; margin-right: 20px; font-size: 14px;"><i class="fa fa-arrow-up push-half-right"></i>Enviar</button>
+    </div>
+  </div>
+</nav>
+
+<!-- <div class="fluid spaced container">
   <div class="row uncollapse">
     <div class="col-4-6 col-xs-full">
       <div class="box box-body">
@@ -86,4 +113,4 @@
     <div class="col-2-6">
     </div>
   </div>
-</div>
+</div> -->

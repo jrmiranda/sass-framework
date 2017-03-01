@@ -37,16 +37,27 @@ $use-responsive-typo:     true;
 
 
 /*
+Layers
+*/
+$z-nav: 100;
+$z-dropdown: 1000;
+$z-modal: 1000;
+$z-backdrop: 900;
+
+
+/*
 Defaults
 */
 $default-spacing: 10px;
+$default-radius: 0.3em;
+
 $default-bgcolor: #fff;
 $default-color: #222222;
 $default-color-light: #757575;
+$default-color-dark: #757575;
 $default-border: 1px solid #e5eaea;
 $default-border-light: 1px solid #eee;
 $default-border-dark: 1px solid #ddd;
-$default-radius: 0.3em;
 
 
 /*
@@ -390,6 +401,19 @@ $input-colors: (
 
 
 /*
+Groups
+*/
+$group-padding-ends: 0.5em;
+$group-sizes: (
+  normal:   (0.900em, 1.3),
+  tiny:   (0.750em, 1.3),
+  small:  (0.850em, 1.3),
+  large:  (1.375em, 1.3),
+  huge:   (2.000em, 1.3)
+);
+
+
+/*
 Menus
 */
 $menu-padding: 0.3em 0.7em;
@@ -400,6 +424,10 @@ $menu-bgcolor_hover: rgba(0, 0, 0, 0.03);
 $menu-light-bgcolor_hover: rgba(255, 255, 255, 0.8);
 $menu-border: 1px solid rgba(0, 0, 0, 0.07);
 $menu-radius: $default-radius;
+$menu-separator-border: $default-border-light;
+$menu-separator-margin: 1em 0;
+
+$sub-menu-margin: 1.8em;
 
 $menu-sizes: (
   null:   0.9em,
@@ -413,23 +441,27 @@ $menu-sizes: (
 /*
 Navbars
 */
-$nav-lineheight: 1.5;
-$nav-padding: 0.8em;
-$nav-border-size: 1px;
+$navbar-lineheight: 1.5;
+$navbar-padding: 0.7em;
+$navbar-border-size: 0px;
 
-$nav-menu-color: $default-color-light;
-$nav-menu-color_hover: $default-color;
-$nav-menu-bgcolor_hover: #fafafa;
-$nav-menu-border: $default-border-light;
+$nav-color: $default-color-light;
+$nav-color_hover: $default-color;
+$nav-bgcolor_hover: #fafafa;
+$nav-border: $default-border-light;
 
-$nav-menu-dark-color: #bbb;
-$nav-menu-dark-color_hover: #f0f0f0;
-$nav-menu-dark-bgcolor_hover: rgba(255,255,255,0.15);
-$nav-menu-dark-border: 1px solid #444;
+$nav-inverted-color: #bbb;
+$nav-inverted-color_hover: #f0f0f0;
+$nav-inverted-bgcolor_hover: rgba(255,255,255,0.15);
+$nav-inverted-border: 1px solid #444;
 
-$nav-collapse-breakpoint: 680px;
+$nav-stripe-size: 3px;
+$nav-stripe-light-color: #bbb;
+$nav-stripe-dark-color: $default-color;
 
-$nav-sizes: (
+$navbar-collapse-breakpoint: 680px;
+
+$navbar-sizes: (
   null:   0.900em,
   tiny:   0.750em,
   small:  0.800em,
@@ -437,13 +469,22 @@ $nav-sizes: (
   huge:   1.250em
 );
 
-$nav-colors: (
-  null:  ($default-bgcolor, #e5eaea),
+$navbar-colors: (
+  //bgcolor, border-color, color, color_hover
+  null:    ($default-bgcolor, #e5eaea),
   'white': (#fff, #e5eaea),
   'light': (#f0f0f0, #e5eaea),
-  'dark':  (#303030, #000),
-  'black': (#000, #000),
+  'dark':  (#303030, #000, true),
+  'black': (#000, #000, true),
 );
+// $navbar-colors: (
+//   //bgcolor, border-color, color, color_hover
+//   null:    ($default-bgcolor, #e5eaea, $default-color-light, $default-color),
+//   'white': (#fff, #e5eaea, $default-color-light, $default-color),
+//   'light': (#f0f0f0, #e5eaea, $default-color-light, $default-color),
+//   'dark':  (#303030, #000, #bbb, #f0f0f0),
+//   'black': (#000, #000, #bbb, #f0f0f0),
+// );
 
 
 /*
@@ -464,8 +505,6 @@ $card-text-size: 0.9em;
 /*
 Dropdown
 */
-$z-dropdown: 1000;
-
 $dropdown-bgcolor: $default-bgcolor;
 $dropdown-bgcolor_hover: #f5f5f5;
 $dropdown-border: 1px solid #d5d5d5;
@@ -485,9 +524,6 @@ $dropdown-separator-margin: 5px 0;
 /*
 Modals
 */
-$z-modal: 1000;
-$z-backdrop: 900;
-
 $modal-top-spacing: 50px;
 $modal-bgcolor: $default-bgcolor;
 $modal-border: $default-border;

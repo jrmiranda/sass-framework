@@ -1,4 +1,7 @@
-.box, .box-header, .box-body, .box-footer {
+.box,
+.box-header,
+.box-body,
+.box-footer {
     @include clearfix();
 }
 

@@ -17,25 +17,40 @@
       @include clearfix;
     }
 
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          padding-left: $sub-menu-margin;
+        }
+
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+
     i {
       display: block;
       line-height: $menu-lineheight;
     }
 
     &.separator {
-      margin: 1em 0;
-      border-bottom: 1px solid #e5e5e5;
       display: block;
+      margin: $menu-separator-margin;
+      border-bottom: $menu-separator-border;
     }
   }
 
   &:not(.unstyled) {
     a {
-      color: #777;
+      color: $menu-color;
 
       &:hover {
         text-decoration: none;
-        color: #222;
+        color: $menu-color_hover;
         background-color: $menu-bgcolor_hover;
       }
     }
@@ -52,7 +67,7 @@
       border-bottom: $menu-border;
 
       &:last-child {
-        border-bototm: 0;
+        border-bottom: 0;
       }
     }
 

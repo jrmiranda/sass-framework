@@ -1,9 +1,9 @@
 @mixin navbar-sizes {
-  @each $variant, $fontsize in $nav-sizes {
-    $push: $base-fontsize * $fontsize/(1em) * (($nav-lineheight + 2 * $nav-padding)/(1em)) + 1px;
+  @each $variant, $fontsize in $navbar-sizes {
+    $push: $base-fontsize * $fontsize/(1em) * (($navbar-lineheight + 2 * $navbar-padding)/(1em)) + 1px;
 
     @if ($variant == null) {
-      .nav {
+      .navbar {
         font-size: $fontsize;
       }
 
@@ -12,7 +12,7 @@
       }
     }
     @else {
-      .nav {
+      .navbar {
         &.#{$variant} {
           font-size: $fontsize;
         }
@@ -26,14 +26,36 @@
 }
 
 @mixin navbar-colors {
-  @each $variant, $color in $nav-colors {
+  @each $variant, $color in $navbar-colors {
     @if ($variant == null) {
       background-color: nth($color, 1);
-      border: $nav-border-size solid nth($color, 2);
+      border-color: nth($color, 2);
+
+        @if (length($color) > 2 and nth($color, 3)) {
+          .nav li a {
+            color: $nav-inverted-color;
+
+            &:hover {
+              color: $nav-inverted-color_hover;
+              background-color: $nav-inverted-bgcolor_hover;
+            }
+          }
+        }
     } @else {
       &.#{$variant} {
         background-color: nth($color, 1);
-        border: $nav-border-size solid nth($color, 2);
+        border-color: nth($color, 2);
+
+        @if (length($color) > 2 and nth($color, 3)) {
+          .nav li a {
+            color: $nav-inverted-color;
+
+            &:hover {
+              color: $nav-inverted-color_hover;
+              background-color: $nav-inverted-bgcolor_hover;
+            }
+          }
+        }
       }
     }
   }

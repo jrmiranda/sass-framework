@@ -1,7 +1,12 @@
 .group {
+  @include sizes($group-sizes);
+
   :not(:only-child) {
     & {
       float: left;
+      margin: 0;
+      padding-top: $group-padding-ends;
+      padding-bottom: $group-padding-ends;
     }
 
     &:not(:first-child) {
